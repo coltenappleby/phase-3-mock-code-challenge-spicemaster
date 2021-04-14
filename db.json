@@ -2,7 +2,7 @@
   "spiceblends": [
     {
       "id": 1,
-      "title": "Pumpkin Spice",
+      "title": "Pumpkin Spice Latte",
       "image": "./assets/spices/pumpkinspicelatte.jpg"
     },
     {
@@ -106,6 +106,36 @@
       "name": "Pepper",
       "spiceblendId": 3,
       "id": 17
+    },
+    {
+      "title": "asdf",
+      "spiceblendId": "1",
+      "id": 18
+    },
+    {
+      "title": "asdf",
+      "spiceblendId": "1",
+      "id": 19
+    },
+    {
+      "title": "test",
+      "spiceblendId": 1,
+      "id": 20
+    },
+    {
+      "title": "test",
+      "spiceblendId": 1,
+      "id": 21
+    },
+    {
+      "name": "test 8",
+      "spiceblendId": 1,
+      "id": 22
+    },
+    {
+      "name": "test 9",
+      "spiceblendId": 1,
+      "id": 23
     }
   ]
 }
