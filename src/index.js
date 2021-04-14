@@ -2,14 +2,17 @@
 
 //globals
 const spiceBlendDetail = document.querySelector('div#spice-blend-detail')
-
+const spiceImages = document.querySelector('div#spice-images')
 
 document.addEventListener('DOMContentLoaded', () => {
 
     loadDetailedSpiceBlend()
 
-    document.addEventListener('click', event => {
+    loadSpiceImages()
+
+    document.addEventListener('click', event => { //this should be submit not slick
         event.preventDefault()
+        // console.log(event.target)
         if (event.target.matches('input')) {
             console.log(event.target.value)
             if (event.target.value === 'Update') {
@@ -21,16 +24,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // console.log(event.target)}
     })
+
+    spiceImages.addEventListener('click', event => {
+
+        console.log(event.target.parentElement.dataset.id)
+
+        loadDetailedSpiceBlend(event.target.parentElement.dataset.id)
+
+    })
     
 
 
 });
 
 
-function loadDetailedSpiceBlend() {
+function loadSpiceImages() {
+
+    fetch('http://localhost:3000/spiceblends')
+    .then(res => res.json())
+    .then(json => {
+
+        json.forEach(element => {
+
+            console.log(element.image)
+
+            let div = document.createElement('div')
+            div.dataset.id = element.id
+
+            div.innerHTML = `
+                <img src = ${element.image} alt = ${element.title} />
+            `
+            
+            // div.className = 'spice-images'
+            // let img = document.createElement('img')
+            // img.src = element.image
+            // img.atl = element.title
+            // div.appendChild(img)
+
+            spiceImages.append(div)
+
+        })
+    });
+
+}
 
 
-    fetch('http://localhost:3000/spiceblends/1')
+function loadDetailedSpiceBlend(id = 1) {
+
+
+    fetch(`http://localhost:3000/spiceblends/${id}`)
     .then(res => res.json())
     .then(json => {
         
@@ -118,7 +160,7 @@ function addIngredient () {
     .then(res => res.json())
     .then(json => {
         console.log(json)
-        loadDetailedSpiceBlend()
+        loadDetailedSpiceBlend(json.spiceblendId)
     })
 
 

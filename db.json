@@ -2,7 +2,7 @@
   "spiceblends": [
     {
       "id": 1,
-      "title": "Pumpkin Spice Latte",
+      "title": "pumkin spice latte",
       "image": "./assets/spices/pumpkinspicelatte.jpg"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "id": 3,
-      "title": "Garlic Pepper Salt",
+      "title": "Garlic Pepper Salt II",
       "image": "./assets/spices/garlicsalt.jpg"
     },
     {
@@ -136,6 +136,16 @@
       "name": "test 9",
       "spiceblendId": 1,
       "id": 23
+    },
+    {
+      "name": "everything but the bagel ",
+      "spiceblendId": 2,
+      "id": 24
+    },
+    {
+      "name": "more salt",
+      "spiceblendId": 3,
+      "id": 25
     }
   ]
 }
