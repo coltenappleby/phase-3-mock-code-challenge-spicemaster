@@ -85,7 +85,17 @@ function loadDetailedSpiceBlend(id = 1) {
 
         spiceBlendDetail.dataset.id = json.id
 
-        loadIngredients(json.id)
+        let ingredientsList = spiceBlendDetail.querySelector('ul.ingredients-list')
+
+        json.ingredients.forEach(element => {
+            // console.log(element)
+
+            let li = document.createElement('li')
+            li.textContent = element.name
+            ingredientsList.append(li)
+        });
+
+        // loadIngredients(json.id)
 
     });
 }
